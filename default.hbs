@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bulma.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/koening.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-divider@1.1.0/dist/bulma-divider.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js" integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-ROhjG07IRaPZsryG77+MVyx3ZT5q3sGEGENoGItwc9xgvx+dl+s3D8Ob1zPdbl/iKklMKp7uFemLJFDRw0bvig==" crossorigin="anonymous"></script>
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <header>
+        <div class="container">
+            {{^is "home"}}<a href="{{@site.url}}">{{/is}}
+                <h1 class="site_title">{{@site.title}}</h1>
+            {{^is "home"}}</a>{{/is}}
+            <div class="site_nav">
+                <a href="/about/"><span class="is-medium has-text-grey-dark">me</span></a>
+                &nbsp;&nbsp;
+                <a href="/rss/"  ><span class="is-medium has-text-grey-dark">rss</span></a>
+            </div>
+        <div class="container">
+    </header>
+
+    {{{body}}}
+    
+    <footer class="footer">
+        <div class="container">
+            <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}} <br>
+            <a href="{{@site.url}}">Latest Posts</a>
+            {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+            {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+            <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+        </div>
+    </footer>
+</body>
+</html>

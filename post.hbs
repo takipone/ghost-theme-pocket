@@ -1,0 +1,70 @@
+{{!< default}}
+
+{{#post}}
+<section class="section pt-1">
+  <div class="container">
+    <article class="{{post_class}}">
+      <h1 class="post-title title">{{title}}</h1>
+      <div class="post-meta">
+        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+        {{tags prefix=" about "}}
+      </div>
+      <section class="post-full-content content">
+        {{content}}
+      </section>
+    </article>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="divider"></div>
+    <div class="columns is-2">
+    {{#prev_post}}
+      <div class="column">
+        <article class="media">
+          {{#if feature_image}}
+          <div class="media-left">
+            <p class="image is-96x96">
+              <a href="{{url}}"><img src="{{img_url feature_image}}" class="post-image"/></a>
+            </p>
+          </div>
+          {{/if}}
+          <div class="media-content">
+            <a href="{{url}}">
+              前の記事 :
+              <h2  class="post-title subtitle">{{title}}</h2>
+            </a>
+            <div class="post-meta">
+              <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+            </div>
+          </div>
+        </article>
+      </div>
+    {{/prev_post}}
+    {{#next_post}}
+      <div class="column">
+        <article class="media">
+          <div class="media-content">
+            <a href="{{url}}">
+              次の記事 :
+              <h2  class="post-title subtitle">{{title}}</h2>
+            </a>
+            <div class="post-meta">
+              <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+            </div>
+          </div>
+          {{#if feature_image}}
+          <div class="media-right">
+            <p class="image is-96x96">
+              <a href="{{url}}"><img src="{{img_url feature_image}}" class="post-image"/></a>
+            </p>
+          </div>
+          {{/if}}
+        </article>
+      </div>
+    {{/next_post}}
+
+    </div>
+  </div>
+</section>
+{{/post}}

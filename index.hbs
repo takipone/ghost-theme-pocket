@@ -1,0 +1,39 @@
+{{!< default}}
+<section class="section">
+  <div class="container">
+    <main role="main" class="mt-5">
+      <!-- This is the post loop - each post will be output using this markup -->
+      {{#foreach posts}}
+
+      <article class="{{post_class}} index-posts media">
+        <div class="media-content">
+          <a href="{{url}}">
+            <h2  class="post-title title is-4">{{title}}</h2>
+            <span class="post-excerpt">{{excerpt characters="140"}}...</span>
+          </a>
+          <div class="post-meta">
+            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>
+            {{tags prefix=" about "}}
+          </div>
+        </div>
+        {{#if feature_image}}
+        <div class="media-right">
+          <p class="image is-96x96">
+            <a href="{{url}}"><img src="{{img_url feature_image}}" class="post-image"/></a>
+          </p>
+        </div>
+        {{/if}}
+      </article>
+
+      {{/foreach}}
+    </main>
+  </div>
+</section>
+
+<!-- Previous/next page links - displayed on every page -->
+<section class="section">
+  <div class="container">
+    <div class="divider"></div>
+    {{pagination}}
+  </div>
+</section>
