@@ -17,7 +17,7 @@
         "node-sass": "^v5.0.0"
     },
     "scripts": {
-        "bulma-build": "node-sass --omit-source-map-url styles.scss assets/css/bulma.css",
+        "bulma-build": "node-sass --omit-source-map-url styles.scss pocket/assets/css/bulma.css",
         "archive-build": "cd pocket; zip -r ../build/pocket.zip ."
     }
 }
