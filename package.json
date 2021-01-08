@@ -6,17 +6,10 @@
         "ghost"
     ],
     "version": "0.1.1",
-    "engines": {
-        "ghost-api": "v3"
-    },
     "license": "MIT",
     "author": {
         "name": "takipone",
         "email": "takipone@gmail.com"
-    },
-    "config": {
-        "posts_per_page": 10,
-        "image_sizes": {}
     },
     "main": "styles.scss",
     "devDependencies": {
@@ -24,6 +17,7 @@
         "node-sass": "^v5.0.0"
     },
     "scripts": {
-        "bulma-build": "node-sass --omit-source-map-url styles.scss assets/css/bulma.css"
+        "bulma-build": "node-sass --omit-source-map-url styles.scss assets/css/bulma.css",
+        "archive-build": "cd pocket; zip -r ../build/pocket.zip ."
     }
 }
