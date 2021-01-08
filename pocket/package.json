@@ -5,7 +5,7 @@
         "ghost-theme",
         "ghost"
     ],
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
         "ghost-api": "v3"
     },
